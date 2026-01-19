@@ -1,5 +1,10 @@
 ---
-const { title = "A-Strategy Agency — Strategy first, always", lang = "it" } = Astro.props;
+import "../styles/global.css";
+
+const {
+  title = "A-Strategy Agency – Strategy first, always",
+  lang = "it",
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -9,32 +14,44 @@ const { title = "A-Strategy Agency — Strategy first, always", lang = "it" } = 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>{title}</title>
-    <meta name="description" content="Strategic marketing in boutique form." />
+    <meta
+      name="description"
+      content="Strategic marketing in boutique form."
+    />
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
-    <!-- Global CSS -->
-    <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Play:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
-
     <!-- NAVBAR -->
-    <header class="site-header">
-      <nav class="nav">
-        <div class="logo">A-Strategy</div>
+    <header class="navbar">
+      <div class="nav-inner">
+        <a href="/" class="logo">A-Strategy</a>
 
-        <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/collaborations">Collaborations</a></li>
-          <li><a href="/contacts">Contacts</a></li>
-        </ul>
-      </nav>
+        <!-- Burger -->
+        <button class="burger" aria-label="Apri menu" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+      <!-- Mobile menu -->
+      <div class="mobile-menu" id="mobileMenu">
+        <nav>
+          <a href="/">Home</a>
+          <a href="/services">Services</a>
+          <a href="/about">About</a>
+          <a href="/collaborations">Collaborations</a>
+          <a href="/contacts">Contacts</a>
+        </nav>
+      </div>
     </header>
 
     <!-- PAGE CONTENT -->
@@ -47,5 +64,14 @@ const { title = "A-Strategy Agency — Strategy first, always", lang = "it" } = 
       <p>A-Strategy Agency — Strategic marketing in boutique form</p>
     </footer>
 
+    <!-- MOBILE MENU SCRIPT -->
+    <script>
+      const burger = document.getElementById("burger");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      burger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+      });
+    </script>
   </body>
 </html>
