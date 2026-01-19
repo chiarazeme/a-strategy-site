@@ -1,0 +1,51 @@
+---
+const { title = "A-Strategy Agency — Strategy first, always", lang = "it" } = Astro.props;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>{title}</title>
+    <meta name="description" content="Strategic marketing in boutique form." />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+
+  <body>
+
+    <!-- NAVBAR -->
+    <header class="site-header">
+      <nav class="nav">
+        <div class="logo">A-Strategy</div>
+
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/collaborations">Collaborations</a></li>
+          <li><a href="/contacts">Contacts</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- PAGE CONTENT -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <p>A-Strategy Agency — Strategic marketing in boutique form</p>
+    </footer>
+
+  </body>
+</html>
